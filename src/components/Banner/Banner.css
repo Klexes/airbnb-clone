@@ -1,0 +1,51 @@
+.banner{
+    background-image: url("https://bergernepal.com/blog/wp-content/uploads/2019/05/shutterstock_1096909217-1024x512.png");
+    height: 50vh;
+    position: relative;
+}
+
+.banner__search{
+    display: flex;
+    flex-direction: column;
+}
+
+.banner__searchButton{
+    background-color: white !important;
+    font-weight: 900 !important;
+    text-transform: inherit !important;
+    color: #ff7779 !important;
+}
+
+.banner__info{
+    background-color: rgba(0,0,0,0.7);
+    color: white;
+    padding-top: 18vh;
+    padding-left: 50px;
+    padding-bottom: 40px;
+    width: 300px;
+}
+
+.banner__info h1{
+    font-size: 1.8rem;
+    font-weight: 700;
+}
+
+.banner__info h5{
+    margin-top: 10px;
+    font-size: 0.8rem;
+    font-weight: 500;
+}
+
+.banner__info > button{
+    background-color: #ff7779;
+    color: white;
+    text-transform: inherit;
+    margin-top: 20px;
+    font-weight: 500;
+}
+
+.banner__info > button:hover{
+    color: #ff7779;
+    background-color: white;
+}
+
