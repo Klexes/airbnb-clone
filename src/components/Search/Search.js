@@ -1,27 +1,35 @@
-import React, { useEffect } from 'react'
-import './Search.css'
-import { DateRangePicker } from 'react-date-range';
-import 'react-date-range/dist/styles.css'; // main style file
-import 'react-date-range/dist/theme/default.css'; // theme css file
+import React, {useState} from 'react';
+import './Search.css';
+import "react-date-range/dist/styles.css"; // main style file
+import "react-date-range/dist/theme/default.css"; // theme css file
+import { DateRangePicker } from "react-date-range";
+import { Button } from "@material-ui/core";
+import PeopleIcon from "@material-ui/icons/People";
 
-const Search = () => {
-    const [startDate, setStartDate] = useEffect(new Date())
-    const [endDate, setEndDate] = useEffect(new Date())
+// DATE PICKER COMPONENT
+function Search() {
+    const [startDate, setStartDate] = useState(new Date());
+    const [endDate, setEndDate] = useState(new Date());
 
     const selectionRange = {
-        startDate,
-        endDate,
-        key: "selection"
-    }
+        startDate: startDate,
+        endDate: endDate,
+        key: "selection",
+      };
 
-    function handleSelect(ranges){
-        setStartDate(ranges.selection.startDate)
-        setEndDate(ranges.selection.endDate)
+    function handleSelect(ranges) {
+        setStartDate(ranges.selection.startDate);
+        setEndDate(ranges.selection.endDate);
     }
 
     return (
-        <div className="search">
+        <div className='search'>
             <DateRangePicker ranges={[selectionRange]} onChange={handleSelect} />
+            <h2>
+                Number of guests <PeopleIcon />
+            </h2>
+            <input min={0} defaultValue={2} type="number"/>
+            <Button>Search Airbnb</Button>
         </div>
     )
 }
